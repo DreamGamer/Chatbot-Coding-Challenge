@@ -18,16 +18,15 @@
 <body>
 
 	<div class="main-container">
-		<div class="text-container">
-			<p>Nutzer: HALLO</p>
-			<br />
-			<p>Ich: HALLO</p>
-			<br />
-			<p>Nutzer: HALLO</p>
-			<br />
-			<p>Ich: HALLO</p>
-			<br />
-			<p>Nutzer: HALLO</p>
+		<div class="conversation-container">
+			
+		</div>
+		<div class="spacer"></div>
+		<div class="chatbox-container">
+			<form id="chatform" method="post">
+				<textarea class="chat" placeholder="Type something..." maxlength="75" required autofocus></textarea>
+				<button id="submit-button" type="submit" class="btn btn-primary submitBTN">Send</button>
+			</form>
 		</div>
 	</div>
 
