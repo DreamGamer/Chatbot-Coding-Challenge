@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/jquery.js"></script>
 	<script type="text/javascript" src="/js/bootstrap.js"></script>
-	<script type="text/javascript" src="/js/main.js"></script>
+	
 </head>
 <body>
 
@@ -23,12 +23,17 @@
 		</div>
 		<div class="spacer"></div>
 		<div class="chatbox-container">
-			<form id="chatform" method="post">
+			<form id="chat-form">
 				<textarea class="chat" placeholder="Type something..." maxlength="75" required autofocus></textarea>
-				<button id="submit-button" type="submit" class="btn btn-primary submitBTN">Send</button>
+				<input id="submit-button" type="submit" class="btn btn-primary submitBTN">
 			</form>
 		</div>
 	</div>
 
 </body>
 </html>
+
+<!--
+	// Scipts
+-->
+<script type="text/javascript" src="/js/main.js"></script>
