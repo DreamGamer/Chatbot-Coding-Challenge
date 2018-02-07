@@ -30,6 +30,7 @@ body {
 	border: 1px #a9a9a9 solid;
 	border-radius: 3px;
 	padding: 6px;
+	overflow-y: auto;
 }
 
 .chatbox-container {
@@ -53,4 +54,13 @@ body {
 .submitBTN {
 	margin-top: 5px;
 	width: 20%;
+}
+
+.conversation-container p {
+	margin-top: 0px;
+	margin-bottom: 1px;
+}
+
+.conversation-container p:nth-child(odd) {
+	background-color: #DFDFDF;
 }
