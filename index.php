@@ -25,7 +25,7 @@
 		<div class="chatbox-container">
 			<form id="chat-form">
 				<textarea class="chat" placeholder="Type something..." maxlength="75" required autofocus></textarea>
-				<input id="submit-button" type="submit" class="btn btn-primary submitBTN">
+				<input id="submit-button" type="submit" disabled="disabled" class="btn btn-primary submitBTN">
 			</form>
 		</div>
 	</div>
@@ -34,6 +34,6 @@
 </html>
 
 <!--
-	// Scipts
+	// Scripts
 -->
 <script type="text/javascript" src="/js/main.js"></script>
