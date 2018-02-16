@@ -1,7 +1,8 @@
 <!--
 //	Chatbox - Coding challenge by DreamGamer
 //	Project start: 07.02.2018	
-//	
+//	File: index.php	
+//
 //	Coded by: Maurice Bertram
 -->
 

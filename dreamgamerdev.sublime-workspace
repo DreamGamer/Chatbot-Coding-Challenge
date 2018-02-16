@@ -1,0 +1,639 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"re",
+				"restarting"
+			],
+			[
+				"und",
+				"understandErrorCounter"
+			],
+			[
+				"reset",
+				"resetChatbot"
+			],
+			[
+				"res",
+				"resetSentence"
+			],
+			[
+				"sta",
+				"startBot"
+			],
+			[
+				"rese",
+				"resetQuastion"
+			],
+			[
+				"under",
+				"understandErrorRepeat"
+			],
+			[
+				"qua",
+				"currentQuastion"
+			],
+			[
+				"curr",
+				"currentQuastion"
+			],
+			[
+				"st",
+				"startQuastion1"
+			],
+			[
+				"qu",
+				"currentQuastion"
+			],
+			[
+				"ye",
+				"yesORNo"
+			],
+			[
+				"cu",
+				"currentQuastion"
+			],
+			[
+				"message",
+				"message"
+			],
+			[
+				"no",
+				"noWords"
+			],
+			[
+				"inc",
+				"includeCounter"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"bor",
+				"border-color"
+			],
+			[
+				"borde",
+				"border-radius"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"ma",
+				"max-width"
+			],
+			[
+				"login",
+				"login_password_md5"
+			],
+			[
+				"logi",
+				"login_name"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"sea",
+				"strToSearch"
+			],
+			[
+				"str",
+				"strTerm"
+			],
+			[
+				"index",
+				"indexOf"
+			],
+			[
+				"vai",
+				"validateAgain"
+			],
+			[
+				"border-",
+				"border-box"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"contact",
+				"contact-form"
+			],
+			[
+				"conta",
+				"contact-form"
+			],
+			[
+				"lan",
+				"language_name_de"
+			],
+			[
+				"lang",
+				"Language"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"modal",
+				"modal-content"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"loginBox_",
+				"loginBox_forgotpassword_text"
+			],
+			[
+				"play",
+				"playAudios"
+			],
+			[
+				"ran",
+				"randomNumber"
+			],
+			[
+				"ur",
+				"url()"
+			],
+			[
+				"li",
+				"link	Tag"
+			],
+			[
+				"change",
+				"changeBackgroundImage"
+			],
+			[
+				"load",
+				"loadBackgroundImage"
+			],
+			[
+				"image",
+				"imageURL1"
+			],
+			[
+				"prel",
+				"preload"
+			],
+			[
+				"list",
+				"list-style-image"
+			],
+			[
+				"container_1_1",
+				"container_1_1_text"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 1026,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/main.js",
+			"settings":
+			{
+				"buffer_size": 4665,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/style.css",
+			"settings":
+			{
+				"buffer_size": 956,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 311.0,
+		"selected_items":
+		[
+			[
+				"Xde",
+				"Xdebug: Start Debugging"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"XDebu",
+				"Xdebug: Start Debugging (Launch Browser)"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 174.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs INTERFACE WICHTIG/js/main.js",
+		"/C/xampp/htdocs INTERFACE WICHTIG/index.php",
+		"/C/xampp/htdocs/js/jquery.js",
+		"/C/xampp/htdocs/account/index.php",
+		"/C/xampp/htdocs/js/main.js",
+		"/C/xampp/htdocs/php/panel/reports.php",
+		"/C/xampp/htdocs/php/login.php",
+		"/C/xampp/htdocs/index.php",
+		"/C/xampp/htdocs/random/index.php",
+		"/C/Users/Maurice/AppData/Roaming/.atlauncher/atlauncher.conf",
+		"/E/Program Files (x86)/ATLauchner/Servers/TheMadPack_216 - Kopie/ops.json",
+		"/E/Minecraft Server 500Jumps to successs/plugins/ItemToCommand/Materials.yml",
+		"/E/Minecraft Server 500Jumps to successs/plugins/Better_Respawn/config.yml",
+		"/E/Minecraft Server 500Jumps to successs/plugins/InstantRespawn/config.yml",
+		"/E/Minecraft Server 500Jumps to successs/plugins/MiRespawn/config.yml",
+		"/C/xampp/htdocs/forum/index.php",
+		"/C/xampp/htdocs/forum/global.php",
+		"/E/jatri/scripts/popup.js",
+		"/C/Users/Maurice/AppData/Roaming/Skype/My Skype Received Files/GetScores.php",
+		"/C/xampp/htdocs mikade/js/script.js",
+		"/C/Users/Maurice/AppData/Roaming/.minecraft/versions/1.12.2-forge1.12.2-14.23.1.2599/1.12.2-forge1.12.2-14.23.1.2599.json",
+		"/C/xampp/htdocs/forum/inc/languages/english/navbar.lang.php",
+		"/C/xampp/htdocs/css/style.css",
+		"/C/xampp/htdocs/js/random/script.js",
+		"/C/xampp/htdocs/js/script.js",
+		"/C/xampp/htdocs/css/random/style.css",
+		"/C/Users/Maurice/Desktop/DreamGamerDE Website.xml",
+		"/C/xampp/htdocs/php/inc/init_href.php",
+		"/C/xampp/htdocs/forum/inc/init.php",
+		"/C/xampp/htdocs/php/getUserCount.php",
+		"/C/xampp/htdocs/php/getLanguage.php",
+		"/C/xampp/htdocs/php/config.php",
+		"/C/xampp/htdocs Interface/php/ts/loadClientCount.php",
+		"/C/xampp/htdocs/imprint/index.php",
+		"/C/xampp/htdocs/signup/index.php",
+		"/C/xampp/htdocs/js/signup/main.js",
+		"/C/xampp/htdocs/css/signup/style.css",
+		"/C/xampp/htdocs/css/imprint/style.css",
+		"/C/xampp/htdocs/contact/index.php",
+		"/C/Users/Maurice/AppData/Local/Temp/Rar$DIa0.090/LabyMod-1.9.json",
+		"/E/jatri/scripts/background.js",
+		"/E/jatri/scripts/chromereload.js",
+		"/E/jatri/scripts/content.js",
+		"/C/xampp/htdocs Interface/js/cookieconsent.min.js",
+		"/C/xampp/htdocs Interface/js/reportForm.js",
+		"/C/xampp/htdocs Interface/js/main.js",
+		"/C/Users/Maurice/Downloads/crowdin_sample_webpage (1).html",
+		"/C/xampp/htdocs/php/inc/init_language.php",
+		"/C/xampp/htdocs/js/imprint/main.js",
+		"/C/xampp/htdocs/dreamgamerdev.sublime-project",
+		"/C/xampp/htdocs/css/contact/style.css",
+		"/C/xampp/htdocs/js/contact/main.js",
+		"/C/xampp/htdocs/css/bootstrap.css",
+		"/C/xampp/htdocs/forum/inc/class_language.php",
+		"/C/xampp/htdocs/forum/inc/config.php",
+		"/C/xampp/htdocs Interface/php/config/mainConfig.php",
+		"/C/xampp/htdocs Interface/php/config/reportReasons.php",
+		"/C/xampp/htdocs Interface/php/panel/reports.php",
+		"/C/xampp/htdocs Interface/php/panel/report.php",
+		"/C/xampp/htdocs Interface/php/panel/logs.php",
+		"/C/xampp/htdocs Interface/php/panel/dashboard.php",
+		"/C/xampp/htdocs Interface/php/login.php",
+		"/C/xampp/htdocs/forum/inc/languages/deutsch_sie/forumteamonline.lang.php",
+		"/C/xampp/htdocs/forum/inc/languages/deutsch_sie/index.lang.php",
+		"/C/xampp/htdocs/forum/inc/plugins/addlanguageplugin.php",
+		"/C/xampp/htdocs/phpinfo.php",
+		"/C/xampp/htdocs/forum/inc/languages/deutsch_sie/navbar.lang.php",
+		"/C/xampp/htdocs/forum/admin/inc/functions.php",
+		"/C/Users/Maurice/Desktop/Package Control.sublime-package",
+		"/C/Users/Maurice/AppData/Local/Temp/Rar$DIa0.606/language.lang.php",
+		"/C/Users/Maurice/Downloads/Emerald Theme-theme.xml",
+		"/C/xampp/htdocs/forum/inc/languages/english/misc.lang.php",
+		"/C/xampp/htdocs/forum/inc/plugins/hello.php",
+		"/C/xampp/htdocs/forum/inc/languages/english/moderation.lang.php",
+		"/C/Users/Maurice/Documents/MobaXterm/slash/RemoteFiles/5/root@DreamGamer.de/java.js",
+		"/C/Users/Maurice/Documents/MobaXterm/slash/RemoteFiles/2/root@DreamGamer.de/index.php",
+		"/C/Users/Maurice/AppData/Local/Temp/Rar$DIa0.759/forumteamonline.php",
+		"/C/Users/Maurice/AppData/Local/Temp/Rar$DIa0.891/im_subscribed.lang.php",
+		"/C/Users/Maurice/AppData/Local/Temp/Rar$DIa0.444/im_subscribed.php",
+		"/C/xampp/htdocs/forum/inc/languages/english/forumteamonline.lang.php",
+		"/C/Users/Maurice/Documents/MobaXterm/slash/RemoteFiles/0/root@DreamGamer.de/download.php",
+		"/C/Users/Maurice/Documents/MobaXterm/slash/RemoteFiles/3/root@DreamGamer.de/java.js",
+		"/C/Users/Maurice/AppData/Local/Temp/Rar$DIa0.783/forumteamonline.lang.php",
+		"/C/Users/Maurice/AppData/Local/Temp/Rar$DIa0.237/config_forumteamonline.lang.php",
+		"/C/xampp/htdocs/forum/inc/plugins/dreamgamerplugin.php",
+		"/C/xampp/htdocs/forum/inc/languages/english/forumdisplay.lang.php",
+		"/C/xampp/htdocs/forum/inc/languages/deutsch_sie/admin/forum_announcements.lang.php",
+		"/C/xampp/htdocs/forum/inc/languages/deutsch_sie.php",
+		"/C/xampp/htdocs/forum/inc/languages/index.html",
+		"/C/xampp/htdocs/sixcoremedia/main.js",
+		"/C/xampp/htdocs/sixcoremedia/index.php",
+		"/E/SixCoreMedia/SixCoreMedia/raffle.sixcoremedia.de/js/burger.js",
+		"/C/Users/Maurice/Downloads/Emerald Theme-theme (3).xml",
+		"/C/xampp/htdocs/forum/inc/db_mysqli.php",
+		"/C/xampp/htdocs/forum/inc/db_base.php",
+		"/C/xampp/htdocs/forum/memberlist.php",
+		"/C/xampp/htdocs/forum/inc/languages/english/hello.lang.php",
+		"/C/xampp/htdocs/forum/inc/languages/english/datahandler_post.lang.php",
+		"/C/xampp/htdocs/forum/search.php",
+		"/C/xampp/htdocs/forum/inc/functions_search.php",
+		"/C/xampp/htdocs/forum/inc/plugins/forumteamonline.php",
+		"/C/xampp/htdocs/php/getAge.php",
+		"/C/xampp/htdocs/ToDoListWebSite.php",
+		"/C/Users/Maurice/Downloads/Emerald Theme-theme (1).xml",
+		"/C/xampp/htdocs/test2.php",
+		"/C/xampp/htdocs/css/jquery-ui.css",
+		"/C/xampp/htdocs/js/jquery-ui.js",
+		"/C/xampp/htdocs/php/language/de.php",
+		"/C/xampp/htdocs/bina.php",
+		"/C/Users/Maurice/Documents/MobaXterm/slash/RemoteFiles/12/root@DreamGamer.de/index.html",
+		"/C/Users/Maurice/AppData/Local/Temp/Rar$DIa0.998/upload.php",
+		"/C/Users/Maurice/AppData/Local/Temp/Rar$DIa0.191/script.js",
+		"/C/Users/Maurice/AppData/Local/Temp/Rar$DIa0.906/examples.js",
+		"/C/xampp/htdocs/js/blockadblock.js",
+		"/C/Users/Maurice/AppData/Local/Temp/Rar$DIa0.218/Gruntfile.js",
+		"/C/Users/Maurice/AppData/Local/Temp/Rar$DIa0.068/index.php",
+		"/C/Users/Maurice/Documents/MobaXterm/slash/RemoteFiles/14/root@DreamGamer.de/style.css",
+		"/C/Users/Maurice/Documents/MobaXterm/slash/RemoteFiles/15/root@DreamGamer.de/upload.php",
+		"/C/Users/Maurice/Documents/MobaXterm/slash/RemoteFiles/16/root@DreamGamer.de/script.js",
+		"/C/xampp/htdocs/css/bootstrap.css.map"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"understandError",
+			"loginButton",
+			"textbox_body",
+			"privacy_policy",
+			"type",
+			"Document",
+			".doc",
+			"forumteamonline_templatelist",
+			"forumteamonline",
+			"forumteamonline_forumteamonline",
+			"$lang->load",
+			"$lang",
+			"$lang->forumteamonline",
+			"addlanguageplugin_admin_lang_load",
+			"forumteamonline_thanks",
+			"$lang->load",
+			"myfirst",
+			"forumteamonline()",
+			"forumteamonline",
+			"$lang",
+			"mybb",
+			"hello_desc",
+			"DreamGamerDE",
+			"@",
+			"70px",
+			"    font-size: 14px;",
+			"Emerald ",
+			"Emerald - Powered by MyBB",
+			"Emerald",
+			"header-block",
+			"logo",
+			"fa-diamond",
+			"dia",
+			"fa-diamond",
+			"f219",
+			"\\f219",
+			"fa-diamond",
+			"diamond",
+			"overflow-wrap",
+			"background-ima",
+			"col-md-2",
+			"row",
+			"form-inline",
+			".container",
+			"Ok das tun viele",
+			" Ok das tun viele.",
+			"complete",
+			"200",
+			"text",
+			"text-size: ",
+			"text-size"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.php",
+					"settings":
+					{
+						"buffer_size": 1026,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								830,
+								817
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/main.js",
+					"settings":
+					{
+						"buffer_size": 4665,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4391,
+								4391
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3740.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "css/style.css",
+					"settings":
+					{
+						"buffer_size": 956,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								923,
+								923
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 726.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.xdebug":
+	{
+		"height": 0.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 160.0,
+	"status_bar_visible": true
+}

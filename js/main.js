@@ -1,24 +1,55 @@
+/*
+//	Chatbox - Coding challenge by DreamGamer
+//	Project start: 07.02.2018	
+//	File: main.js
+//
+//	Coded by: Maurice Bertram
+*/
+
 var botName = "Chatbot";
-var yesWords = ["ja", "natürlich", "sicher", "yes", "klaro", "jap", "jo"];
+var userName = "Ich: ";
+var yesWords = ["ja", "natürlich", "sicher", "yes", "klaro", "jap", "jo", "yea", "joa", "jep"];
 var noWords = ["nein", "ne", "nope", "nö"];
 
 
-var understandError = "<p>Tut mir leid ich habe leider nicht verstanden was du gesagt hast. Wir entschuldigen uns vielmals.</p>";
-var understandErrorRepeat = "<p>Tut mir leid ich habe leider nicht verstanden was du gesagt hast könntest du dies wiederholen?</p>";
+var understandError = "Tut mir leid ich habe leider nicht verstanden was du gesagt hast. Wir entschuldigen uns vielmals.";
+var understandErrorRepeat = "Tut mir leid ich habe leider nicht verstanden was du gesagt hast könntest du dies wiederholen?";
 var understandErrorCounter = 0;
-var resetSentence = "<p>Es ist ein Fehler aufgetreten der bot wird neugestartet<span id='restartDots'>...</span></p>";
+var resetSentence = "Es ist ein Fehler aufgetreten der bot wird neugestartet<span id='restartDots'>...</span>";
 
-var currentQuastion = 0;
+var firstQuastionNoAwnser = "Ok... Vieleicht ja ein andern mal :) Ich wünsche dir noch einen schönen Tag!";
+
 var quastions = 1;
+
+var quastion1Text = "Willkommen beim GetInIt Coding Challenge Chatbot. Ich habe gehört du möchtest eine rat für deine Freizeitgestaltung?";
+var quastion2Text = "Cool! Dann fangen wir doch direkt mal an.<br />Wie alt bist du denn? (Bitte gebe nur die Zahl ein!)";
+var quastion3Text = "Ok, und wieviel Zeit möchtest du für die Freizeitaktivität einplanen? <br />1 -> 15 Minuten<br />2 -> 30 Minuten<br />3 -> 45 Minuten<br />4 -> 45+ Minuten";
+var quastion4Text = "Gut zu wissen ^^<br/>Weißt du wie das Wetter sein wird?";
+var quastion4TextV1 = "Oh wenn du wenig Zeit hast beeilen wir uns lieber und kommen direkt zur nächsten Frage!<br/>Weißt du wie das Wetter sein wird?<br/>1 -> Regnerisch<br/>2 -> Sonnig<br/>3 -> Weiß nicht";
+var quastion4TextV2 = "Gut zu wissen ^^<br/>Weißt du wie das Wetter sein wird?<br/>1 -> Regnerisch<br/>2 -> Sonnig<br/>3 -> Weiß nicht";
+var quastion4TextV3 = "Gut zu wissen ^^<br/>Weißt du wie das Wetter sein wird?<br/>1 -> Regnerisch<br/>2 -> Sonnig<br/>3 -> Weiß nicht";
+var quastion4TextV4 = "Cool das du dir soviel Zeit nimmst :)<br/>Weißt du wie das Wetter sein wird?<br/>1 -> Regnerisch<br/>2 -> Sonnig<br/>3 -> Weiß nicht";
+var quastion5TextV1 = "Oh nein das ist nicht gut :/ Dann suche ich mal lieber etwas fürs Trockene.<br/>Wie anstrengend soll die Freizeitaktivität denn sein?<br/>1 -> Einfach<br/>2 -> Mittel<br/>3 -> Schwer";
+var quastion5TextV2 = "Cool wenn die Sonne scheint kann ich ja etwas für draußen suchen :)<br/>Wie anstrengend soll die Freizeitaktivität denn sein?<br/>1 -> Einfach<br/>2 -> Mittel<br/>3 -> Schwer";
+var quastion5TextV3 = "Ok ist nicht schlimm das du es nicht weißt.<br/>Wie anstrengend soll die Freizeitaktivität denn sein?<br/>1 -> Einfach<br/>2 -> Mittel<br/>3 -> Schwer";
+var quastion6Text = "Ok kommen wir zur letzten Frage! Welche Kategorie nimmst du?";
+var quastion6TextAwnsers = "";
+
+var finalText1 = "Ok :) Lass mich kurz überlegen was mir einfällt...";
+
 
 var lastBotMessage = "";
 var restarting = false;
 
-var anwsers =  {
+var allCategories = {};
+
+var answers =  {
 	"1": "",
 	"2": "",
 	"3": "",
-	"4": ""
+	"4": "",
+	"5": "",
+	"6": ""
 }
 
 
@@ -58,7 +89,7 @@ function sendMessage() {
 
 	if (message != "") {
 		// Add message to div
-		addMessage("You", message);
+		addMessage(userName, message);
 
 		// Scroll to end of div
 		$('.conversation-container').scrollTop($('.conversation-container')[0].scrollHeight);
@@ -69,28 +100,23 @@ function sendMessage() {
 		// Disable the submit button
 		$("#submit-button").attr("disabled", "disabled");
 
-		switch (currentQuastion) {
-			case 0:
-				startQuastion1(message);
-				break;
-			default:
-				console.log("Default");
+		startQuastions(message);
+
+		for (var r in answers) {
+		    console.log(answers[r]);
 		}
 
-		for (var r in anwsers) {
-		    console.log(r);
-		}
+		sendMessageToDatabase(message);
 	}
 }
 
 
-function addMessage(userName, message) {
-	$(".conversation-container").append("<p><b>" + userName + ":</b> " + message + "</p>");
+function addMessage(name, message) {
+	$(".conversation-container").append("<p><b>" + name + ":</b> " + message + "</p>");
 }
 
 function startBot() {
-	lastBotMessage = "Willkommen beim GetInIt Coding Challenge Chatbot. Ich habe gehört du möchtest eine rat für deine Freizeitgestaltung?";
-	addMessage(botName, "Willkommen beim GetInIt Coding Challenge Chatbot. Ich habe gehört du möchtest eine rat für deine Freizeitgestaltung?");
+	addMessage(botName, quastion1Text);
 }
 
 function searchWord(words, message) {
@@ -101,26 +127,23 @@ function searchWord(words, message) {
 	for (var i=0; i < words.length; i++) {
 		// Set word to lower case.
 		word = words[i].toLowerCase();
-		/*
-		// If the word is in the message then say it to includeCounter
-		if (message.indexOf(word) >= 0) {
-			includeCounter++;
-		}
-		*/
 
+		// Check if the message has the same length as the word (so if i say "no" it should get the word) (example for this if: minecraft -> ne is in the word this if filter it)
+		// Examples: "minecraft" -> ne = X "ne" -> ne = Y Ne, ich möchte nicht -> ne, = Y
 		if (message.length == word.length && message.includes(word)) {
 			includeCounter++;
-		} else if (message.includes(" " + word + " ") || message.includes(word + " ") || message.includes(" " + word)) {
+		} else if (message.includes(" " + word + " ") || message.includes(word + " ") || message.includes(" " + word) || message.includes("," + word + ",") || message.includes(word + ",") || message.includes("," + word)) {
 			includeCounter++;
 		}
-
 
 	}
 
+	// if the word is included return true
 	if (includeCounter > 0) {
 		return true;
 	}
 
+	// Default return statement is false
 	return false;
 }
 
@@ -134,25 +157,164 @@ function yesORNo(message) {
 	}
 }
 
-function startQuastion1(message) {
-	if (yesORNo(message) == true) {
-		// Anwser yes
-		console.log("yes");
-		anwsers["1"] = "yes";
-		currentQuastion = 1;
-	} else if(yesORNo(message) == false) {
-		// Anwser no
-		console.log("no");
-		anwsers["1"] = "no";
-		currentQuastion = 1;
-	} else {
-		didntUnderstand();
-		resetChatbox();
+function startQuastions(message) {
+	if (answers["1"] == "") {
+		// --------- Quastion 1 --------- \\
+		if (yesORNo(message) == true) {
+			// answer yes
+			answers["1"] = "yes";
+			addMessage(botName, quastion2Text);
+			resetChatbox();
+			understandErrorCounter = 0;
+		} else if(yesORNo(message) == false) {
+			// answer no
+			answers["1"] = "no";
+			addMessage(botName, firstQuastionNoAwnser);
+			understandErrorCounter = 0;
+		} else {
+			didntUnderstand();
+		}
+	} else if (answers["2"] == "") {
+		// --------- Quastion 2 --------- \\
+		if (!isNaN(message)) {
+			answers["2"] = message;
+			addMessage(botName, quastion3Text);
+			resetChatbox();
+			understandErrorCounter = 0;
+		} else {
+			didntUnderstand();
+		}
+	} else if (answers["3"] == "") {
+		// --------- Quastion 3 --------- \\
+		if (message == "1" || message == "2" || message == "3" || message == "4") {
+			answers["3"] = message;
+			switch (answers["3"]) {
+				case "1":
+				addMessage(botName, quastion4TextV1);
+					break;
+				case "2":
+				addMessage(botName, quastion4TextV2);
+					break;
+				case "3":
+				addMessage(botName, quastion4TextV3);
+					break;
+				case "4":
+				addMessage(botName, quastion4TextV4);
+					break;
+				default:
+					addMessage(botName, quastion4Text);
+					break;
+			}
+			resetChatbox();
+			understandErrorCounter = 0;
+		} else {
+			didntUnderstand();
+		}
+	} else if (answers["4"] == "") {
+		// --------- Quastion 4 --------- \\
+		if (message == "1" || message == "2" || message == "3") {
+			answers["4"] = message;
+			switch (answers["4"]) {
+				case "1":
+				addMessage(botName, quastion5TextV1);
+					break;
+				case "2":
+				addMessage(botName, quastion5TextV2);
+					break;
+				case "3":
+				addMessage(botName, quastion5TextV3);
+					break;
+			}
+			resetChatbox();
+			understandErrorCounter = 0;
+		} else {
+			didntUnderstand();
+		}
+
+	} else if (answers["5"] == "") {
+		// --------- Quastion 5 --------- \\
+		if (message == "1" || message == "2" || message == "3") {
+			answers["5"] = message;
+			$.ajax({
+			    type: "POST",
+			    url: 'php/getCategories.php',
+			    dataType: 'json',
+			    success: function (obj, textstatus) {
+			    	if( !('error' in obj) ) {
+	                    var results = obj.result;
+				    	allCategories = results.split(',');
+				    	for (var r in allCategories) {
+				    		var number = r;
+				    		number++;
+							quastion6TextAwnsers = quastion6TextAwnsers + "<br />" + number + " -> " + allCategories[r];
+						}
+
+						addMessage(botName, quastion6Text + quastion6TextAwnsers);
+						resetChatbox();
+						understandErrorCounter = 0;
+						scrollToTheEndOfTheDiv();
+	                }
+	                else {
+	                    console.log(obj.error);
+	                }
+			    },
+				error: function(jqXHR, textStatus, errorMessage) {
+					console.log("(jqXHR)Unknown Error: " + jqXHR);
+					console.log("(textStatus)Unknown Error: " + textStatus);
+					console.log("(errorMessage)Unknown Error: " + errorMessage);
+				}
+			});
+		} else {
+			didntUnderstand();
+		}
+
+	} else if (answers["6"] == "") {
+		// --------- Quastion 6 --------- \\
+
+		if (!isNaN(message)) {
+			var messageNumber = parseInt(message);
+			console.log("CategoriesLength: " + allCategories.length);
+			console.log("Number: " + messageNumber);
+			if (messageNumber < (allCategories.length += 1) && messageNumber > 0) {
+				addMessage(botName, finalText1);
+				scrollToTheEndOfTheDiv();
+
+				answers["6"] = allCategories[messageNumber];
+
+				$.ajax({
+				    type: "POST",
+				    url: 'php/getResult.php',
+				    dataType: 'json',
+				    data: {
+				    	answer1: answers["1"],
+				    	answer2: answers["2"],
+				    	answer3: answers["3"],
+				    	answer4: answers["4"],
+				    	answer5: answers["5"],
+				    	answer6: answers["6"]
+				    },
+				    success: function (obj, textstatus) {
+				    	if ( !("error" in obj) && !("noActivity" in obj)) {
+				    		console.log("Namen: " + obj.result);
+		                } else if ("noActivity" in obj) {
+		                	addMessage(botName, obj.noActivity);
+		                } else {
+		                    console.log(obj.error);
+		                }
+		            },
+					error: function(jqXHR, textStatus, errorMessage) {
+						console.log("(jqXHR)Unknown Error: " + jqXHR);
+						console.log("(textStatus)Unknown Error: " + textStatus);
+						console.log("(errorMessage)Unknown Error: " + errorMessage);
+					}
+				});
+			} else {
+				didntUnderstand();
+			}
+		} else {
+			didntUnderstand();
+		}
 	}
-}
-
-function startQuastion2(message) {
-
 }
 
 function didntUnderstand() {
@@ -162,6 +324,8 @@ function didntUnderstand() {
 	} else {
 		addMessage(botName, understandErrorRepeat);
 		understandErrorCounter++;
+		resetChatbox();
+		scrollToTheEndOfTheDiv();
 	}
 }
 
@@ -176,8 +340,8 @@ function resetChatbot() {
 		addMessage(botName, resetSentence);
 		animateDots(4000);
 		setTimeout(function(){ 
-			currentQuastion = 0;
 			$(".conversation-container").html("");
+			resetChatbox();
 			startBot();
 			understandErrorCounter = 0;
 			restarting = false;
@@ -188,23 +352,50 @@ function resetChatbot() {
 function animateDots(time) {
 	var counter = time / 500;
 
-	console.log($("#restartDots").html());
-
-	setTimeout(function(){ 
+	setTimeout(function(){
 		counter--;
-		switch ($("#restartDots").html) {
+		// Switch system for the dots (. -> .. -> ...)
+		switch ($("#restartDots").html()) {
 			case ".":
-			$("#restartDots").html("..");
+				$("#restartDots").html("..");
 				break;
 			case "..":
-			$("#restartDots").html("...");
+				$("#restartDots").html("...");
 				break;
 			case "...":
-			$("#restartDots").html(".");
+				$("#restartDots").html(".");
 				break;
 		}
+
+		// If counter bigger then 0 start animateDots again
 		if (counter > 0) {
-			animateDots(time);
+			// Start this function again but remove 500 because if it will be not be removed this will be a endless loop :D
+			animateDots(time -= 500);
 		}
 	 }, 500);
+}
+
+function sendMessageToDatabase(message) {
+	if (message != "" || message != null) {
+		$.ajax({
+			type: 'post',
+			url: '/php/sendMessage.php',
+			data: {
+				message:message
+			},
+			success: function (response) {
+				$("body").append(response);
+			},
+			error: function(jqXHR, textStatus, errorMessage) {
+				console.log("(jqXHR)Unknown Error: " + jqXHR);
+				console.log("(textStatus)Unknown Error: " + textStatus);
+				console.log("(errorMessage)Unknown Error: " + errorMessage);
+			}
+		});
+	}
+}
+
+function scrollToTheEndOfTheDiv() {
+	// Scroll to end of div
+	$('.conversation-container').scrollTop($('.conversation-container')[0].scrollHeight);
 }
