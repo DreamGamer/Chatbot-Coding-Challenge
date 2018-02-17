@@ -1,9 +1,6 @@
 # Chatbot-Coding-Challenge
-
 |	Chatbox - Coding challenge by DreamGamer
-
 |	Project start: 07.02.2018	
-
 |	Coded by: Maurice Bertram
 
 
