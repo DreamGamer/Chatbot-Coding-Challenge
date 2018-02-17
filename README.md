@@ -7,3 +7,7 @@
 
 Chatbot Coding Challenge for GetInIt
 This is a Coding Challenge with GetInIT... This chatbot should be can tell me a specify free time activity
+
+
+Here you can see the finished Chatbot!
+htttp://ChatBot.DreamGamer.de/
