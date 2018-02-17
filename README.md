@@ -10,4 +10,4 @@ This is a Coding Challenge with GetInIT... This chatbot should be can tell me a 
 
 
 Here you can see the finished Chatbot!
-htttp://ChatBot.DreamGamer.de/
+http://ChatBot.DreamGamer.de/
