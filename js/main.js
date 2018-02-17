@@ -13,29 +13,31 @@ var noWords = ["nein", "ne", "nope", "nö"];
 
 
 var understandError = "Tut mir leid ich habe leider nicht verstanden was du gesagt hast. Wir entschuldigen uns vielmals.";
-var understandErrorRepeat = "Tut mir leid ich habe leider nicht verstanden was du gesagt hast könntest du dies wiederholen?";
+var understandErrorRepeat = "Tut mir leid ich habe leider nicht verstanden was du gesagt hast k&ouml;nntest du dies wiederholen?";
 var understandErrorCounter = 0;
 var resetSentence = "Es ist ein Fehler aufgetreten der bot wird neugestartet<span id='restartDots'>...</span>";
 
-var firstQuastionNoAwnser = "Ok... Vieleicht ja ein andern mal :) Ich wünsche dir noch einen schönen Tag!";
+var firstQuastionNoAwnser = "Ok... Vieleicht ja ein andern mal :) Ich w&uuml;nsche dir noch einen sch&ouml;nen Tag!";
 
 var quastions = 1;
 
-var quastion1Text = "Willkommen beim GetInIt Coding Challenge Chatbot. Ich habe gehört du möchtest eine rat für deine Freizeitgestaltung?";
+var quastion1Text = "Willkommen beim GetInIt Coding Challenge Chatbot. Ich habe geh&ouml;rt du m&ouml;chtest eine rat f&uuml;r deine Freizeitgestaltung?";
 var quastion2Text = "Cool! Dann fangen wir doch direkt mal an.<br />Wie alt bist du denn? (Bitte gebe nur die Zahl ein!)";
-var quastion3Text = "Ok, und wieviel Zeit möchtest du für die Freizeitaktivität einplanen? <br />1 -> 15 Minuten<br />2 -> 30 Minuten<br />3 -> 45 Minuten<br />4 -> 45+ Minuten";
+var quastion3Text = "Ok, und wieviel Zeit m&ouml;chtest du f&uuml;r die Freizeitaktivit&auml;t einplanen? <br />1 -> 15 Minuten<br />2 -> 30 Minuten<br />3 -> 45 Minuten<br />4 -> 45+ Minuten";
 var quastion4Text = "Gut zu wissen ^^<br/>Weißt du wie das Wetter sein wird?";
-var quastion4TextV1 = "Oh wenn du wenig Zeit hast beeilen wir uns lieber und kommen direkt zur nächsten Frage!<br/>Weißt du wie das Wetter sein wird?<br/>1 -> Regnerisch<br/>2 -> Sonnig<br/>3 -> Weiß nicht";
+var quastion4TextV1 = "Oh wenn du wenig Zeit hast beeilen wir uns lieber und kommen direkt zur n&auml;chsten Frage!<br/>Weißt du wie das Wetter sein wird?<br/>1 -> Regnerisch<br/>2 -> Sonnig<br/>3 -> Weiß nicht";
 var quastion4TextV2 = "Gut zu wissen ^^<br/>Weißt du wie das Wetter sein wird?<br/>1 -> Regnerisch<br/>2 -> Sonnig<br/>3 -> Weiß nicht";
 var quastion4TextV3 = "Gut zu wissen ^^<br/>Weißt du wie das Wetter sein wird?<br/>1 -> Regnerisch<br/>2 -> Sonnig<br/>3 -> Weiß nicht";
 var quastion4TextV4 = "Cool das du dir soviel Zeit nimmst :)<br/>Weißt du wie das Wetter sein wird?<br/>1 -> Regnerisch<br/>2 -> Sonnig<br/>3 -> Weiß nicht";
-var quastion5TextV1 = "Oh nein das ist nicht gut :/ Dann suche ich mal lieber etwas fürs Trockene.<br/>Wie anstrengend soll die Freizeitaktivität denn sein?<br/>1 -> Einfach<br/>2 -> Mittel<br/>3 -> Schwer";
-var quastion5TextV2 = "Cool wenn die Sonne scheint kann ich ja etwas für draußen suchen :)<br/>Wie anstrengend soll die Freizeitaktivität denn sein?<br/>1 -> Einfach<br/>2 -> Mittel<br/>3 -> Schwer";
-var quastion5TextV3 = "Ok ist nicht schlimm das du es nicht weißt.<br/>Wie anstrengend soll die Freizeitaktivität denn sein?<br/>1 -> Einfach<br/>2 -> Mittel<br/>3 -> Schwer";
+var quastion5TextV1 = "Oh nein das ist nicht gut :/ Dann suche ich mal lieber etwas f&uuml;rs Trockene.<br/>Wie anstrengend soll die Freizeitaktivit&auml;t denn sein?<br/>1 -> Einfach<br/>2 -> Mittel<br/>3 -> Schwer";
+var quastion5TextV2 = "Cool wenn die Sonne scheint kann ich ja etwas f&uuml;r draußen suchen :)<br/>Wie anstrengend soll die Freizeitaktivit&auml;t denn sein?<br/>1 -> Einfach<br/>2 -> Mittel<br/>3 -> Schwer";
+var quastion5TextV3 = "Ok ist nicht schlimm das du es nicht weißt.<br/>Wie anstrengend soll die Freizeitaktivit&auml;t denn sein?<br/>1 -> Einfach<br/>2 -> Mittel<br/>3 -> Schwer";
 var quastion6Text = "Ok kommen wir zur letzten Frage! Welche Kategorie nimmst du?";
 var quastion6TextAwnsers = "";
 
-var finalText1 = "Ok :) Lass mich kurz überlegen was mir einfällt...";
+var finalTextArray = {};
+var finalText = "Wie w&auml;re es mit einer dieser Freizeitaktivit&auml;ten? <br />";
+var finalText1 = "Ok :) Lass mich kurz &uuml;berlegen was mir einf&auml;llt...";
 
 
 var lastBotMessage = "";
@@ -113,6 +115,7 @@ function sendMessage() {
 
 function addMessage(name, message) {
 	$(".conversation-container").append("<p><b>" + name + ":</b> " + message + "</p>");
+	scrollToTheEndOfTheDiv();
 }
 
 function startBot() {
@@ -129,7 +132,7 @@ function searchWord(words, message) {
 		word = words[i].toLowerCase();
 
 		// Check if the message has the same length as the word (so if i say "no" it should get the word) (example for this if: minecraft -> ne is in the word this if filter it)
-		// Examples: "minecraft" -> ne = X "ne" -> ne = Y Ne, ich möchte nicht -> ne, = Y
+		// Examples: "minecraft" -> ne = X "ne" -> ne = Y Ne, ich m&ouml;chte nicht -> ne, = Y
 		if (message.length == word.length && message.includes(word)) {
 			includeCounter++;
 		} else if (message.includes(" " + word + " ") || message.includes(word + " ") || message.includes(" " + word) || message.includes("," + word + ",") || message.includes(word + ",") || message.includes("," + word)) {
@@ -252,7 +255,6 @@ function startQuastions(message) {
 						addMessage(botName, quastion6Text + quastion6TextAwnsers);
 						resetChatbox();
 						understandErrorCounter = 0;
-						scrollToTheEndOfTheDiv();
 	                }
 	                else {
 	                    console.log(obj.error);
@@ -277,9 +279,8 @@ function startQuastions(message) {
 			console.log("Number: " + messageNumber);
 			if (messageNumber < (allCategories.length += 1) && messageNumber > 0) {
 				addMessage(botName, finalText1);
-				scrollToTheEndOfTheDiv();
 
-				answers["6"] = allCategories[messageNumber];
+				answers["6"] = allCategories[messageNumber -= 1];
 
 				$.ajax({
 				    type: "POST",
@@ -294,8 +295,23 @@ function startQuastions(message) {
 				    	answer6: answers["6"]
 				    },
 				    success: function (obj, textstatus) {
+				    	messageSpacer();
+
+
 				    	if ( !("error" in obj) && !("noActivity" in obj)) {
-				    		console.log("Namen: " + obj.result);
+				    		var results = obj.result;
+					    	finalTextArray = results.split(',');
+					    	for (var r in finalTextArray) {
+					    		if (r == 0) {
+					    			finalText = finalText + finalTextArray[r];
+					    		} else {
+									finalText = finalText + ", " + finalTextArray[r];
+								}
+							}
+
+
+				    		console.log("RESULT: " + obj.result)
+				    		addMessage(botName, finalText);
 		                } else if ("noActivity" in obj) {
 		                	addMessage(botName, obj.noActivity);
 		                } else {
@@ -325,7 +341,6 @@ function didntUnderstand() {
 		addMessage(botName, understandErrorRepeat);
 		understandErrorCounter++;
 		resetChatbox();
-		scrollToTheEndOfTheDiv();
 	}
 }
 
@@ -398,4 +413,8 @@ function sendMessageToDatabase(message) {
 function scrollToTheEndOfTheDiv() {
 	// Scroll to end of div
 	$('.conversation-container').scrollTop($('.conversation-container')[0].scrollHeight);
+}
+
+function messageSpacer() {
+	$(".conversation-container").append("<div class='resultSpacer'><center><p>Die Auswertung:</p></center></div>");
 }

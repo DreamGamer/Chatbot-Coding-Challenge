@@ -14,11 +14,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	if ($conn->connect_error) {
 	    consoleLog("Error: No MySQL connection!");
 	} else {
-		$sendMessageSQL = "INSERT INTO chat (message, ip, date) VALUES ('$message', '$userIP', '$currentDate')";
+		$stmt = $conn->prepare("INSERT INTO chat (message, ip, date) VALUES (?, ?, ?)");
+		$stmt->bind_param("sss", $message, $userIP, $currentDate);
+		$stmt->execute();
 
-		if ($conn->query($sendMessageSQL) === FALSE) {
-			consoleLog("Error: " . $conn->error);
-		}
+		$stmt->close();
+		$conn->close();
 	}
 
 

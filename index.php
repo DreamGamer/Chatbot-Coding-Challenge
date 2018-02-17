@@ -25,8 +25,8 @@
 		<div class="spacer"></div>
 		<div class="chatbox-container">
 			<form id="chat-form">
-				<textarea class="chat" placeholder="Type something..." maxlength="75" required autofocus></textarea>
-				<input id="submit-button" type="submit" disabled="disabled" class="btn btn-primary submitBTN">
+				<textarea class="chat form-control" placeholder="Schreibe etwas..." maxlength="75" required autofocus></textarea>
+				<button id="submit-button" type="submit" disabled="disabled" class="btn btn-primary submitBTN">Senden</button>
 			</form>
 		</div>
 	</div>

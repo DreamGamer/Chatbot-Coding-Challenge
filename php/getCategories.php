@@ -30,6 +30,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 		} else {
 			$javascriptResultArray["error"] = "No entries in the Database";
 		}
+
+		$conn->close();
 	}
 
 	echo json_encode($javascriptResultArray);
