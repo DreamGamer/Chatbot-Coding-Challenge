@@ -8,12 +8,12 @@
 
 var botName = "Chatbot";
 var userName = "Ich: ";
-var yesWords = ["ja", "natürlich", "sicher", "yes", "klaro", "jap", "jo", "yea", "joa", "jep"];
+var yesWords = ["ja", "natürlich", "sicher", "yes", "klaro", "jap", "jo", "yea", "joa", "jep", "joahr", "joar"];
 var noWords = ["nein", "ne", "nope", "nö"];
 
 
 var understandError = "Tut mir leid ich habe leider nicht verstanden was du gesagt hast. Wir entschuldigen uns vielmals.";
-var understandErrorRepeat = "Tut mir leid ich habe leider nicht verstanden was du gesagt hast k&ouml;nntest du dies wiederholen?";
+var understandErrorRepeat = "Tut mir leid ich habe leider nicht verstanden was du gesagt hast.";
 var understandErrorCounter = 0;
 var resetSentence = "Es ist ein Fehler aufgetreten der bot wird neugestartet<span id='restartDots'>...</span>";
 
@@ -334,7 +334,7 @@ function startQuastions(message) {
 }
 
 function didntUnderstand() {
-	if (understandErrorCounter > 2) {
+	if (understandErrorCounter > 3) {
 		addMessage(botName, understandError);
 		resetChatbot();
 	} else {
@@ -353,6 +353,13 @@ function resetChatbot() {
 	if (!restarting) {
 		restarting = true;
 		addMessage(botName, resetSentence);
+		answers["1"] = "";
+		answers["2"] = "";
+		answers["3"] = "";
+		answers["4"] = "";
+		answers["5"] = "";
+		answers["6"] = "";
+
 		animateDots(4000);
 		setTimeout(function(){ 
 			$(".conversation-container").html("");

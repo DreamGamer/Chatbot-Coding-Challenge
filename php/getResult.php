@@ -57,8 +57,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 							die();
 						}
 					} else {
-						if ($stmt = $conn->prepare("SELECT DISTINCT name FROM freetimeactivities WHERE effort=? AND category=? AND weather=? AND time < ? AND minAge < ?")) {
-							$stmt->bind_param("sssss", $effort, $category, $weather, $time += 1, $age);
+						if ($stmt = $conn->prepare("SELECT DISTINCT name FROM freetimeactivities WHERE effort=? AND category=? AND weather=? AND time < ? AND minAge < ? OR effort=? AND category=? AND weather='3' AND time < ? AND minAge < ?")) {
+							$stmt->bind_param("ssssssssss", $effort, $category, $weather, $time += 1, $age, $effort, $category, $weather, $time += 1, $age);
 							$stmt->execute();
 							$stmt->store_result();
 							$stmt->bind_result($result);
