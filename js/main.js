@@ -104,9 +104,11 @@ function sendMessage() {
 
 		startQuastions(message);
 
+		/*
 		for (var r in answers) {
 		    console.log(answers[r]);
 		}
+		*/
 
 		sendMessageToDatabase(message);
 	}
@@ -275,8 +277,8 @@ function startQuastions(message) {
 
 		if (!isNaN(message)) {
 			var messageNumber = parseInt(message);
-			console.log("CategoriesLength: " + allCategories.length);
-			console.log("Number: " + messageNumber);
+			//console.log("CategoriesLength: " + allCategories.length);
+			//console.log("Number: " + messageNumber);
 			if (messageNumber < (allCategories.length += 1) && messageNumber > 0) {
 				addMessage(botName, finalText1);
 
@@ -302,15 +304,23 @@ function startQuastions(message) {
 				    		var results = obj.result;
 					    	finalTextArray = results.split(',');
 					    	for (var r in finalTextArray) {
+					    		console.log("r: " + r);
+					    		console.log("length: " + finalTextArray.length);
+
+					    		var arrayLength = finalTextArray.length;
+					    		arrayLength--;
+
 					    		if (r == 0) {
 					    			finalText = finalText + finalTextArray[r];
+					    		} else if (r == arrayLength) {
+					    			finalText = finalText + " oder " + finalTextArray[r];
 					    		} else {
 									finalText = finalText + ", " + finalTextArray[r];
 								}
 							}
 
 
-				    		console.log("RESULT: " + obj.result)
+				    		//console.log("RESULT: " + obj.result)
 				    		addMessage(botName, finalText);
 		                } else if ("noActivity" in obj) {
 		                	addMessage(botName, obj.noActivity);
