@@ -6,7 +6,7 @@
 
 
 Chatbot Coding Challenge for GetInIt
-This is a Coding Challenge with GetInIT... This chatbot should be can tell me a specify free time activity
+This is for the Coding Challenge from GetInIT... This chatbot should  tell me a specify free time activity from my inputs
 
 
 Here you can see the finished Chatbot!
